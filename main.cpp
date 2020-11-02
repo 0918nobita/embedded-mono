@@ -7,10 +7,10 @@ int main(int argc, char* argv[]) {
     mono_config_parse(NULL);
 
     // Create a domain: each assembly is loaded and run in a MonoDomain
-    MonoDomain *domain = mono_jit_init("startup.exe");
+    MonoDomain *domain = mono_jit_init("Startup.exe");
 
     // Open the executable, and run the Main method declared in the executable
-    MonoAssembly *assembly = mono_domain_assembly_open(domain, "startup.exe");
+    MonoAssembly *assembly = mono_domain_assembly_open(domain, "Startup.exe");
 
     if (!assembly) {
         std::cerr << "Failed to load assembly" << std::endl;
